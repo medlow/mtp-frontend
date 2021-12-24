@@ -1,0 +1,32 @@
+
+<div class="container">
+        <div class="row text-warning">
+                <h1>Categorie</h1>
+        </div>
+  <div class="row">
+          <form (ngSubmit)="saveCategorie()">
+
+                  <div class="form-group">
+                        <label for="">Nom</label>
+
+                          <input type="text" name="nom_art" [(ngModel)]="categorie.nom_categ"
+                          placeholder="Entrez le nom du categorie" class="form-control col-md-12 "/>
+                  </div>
+
+                  <div class="form-group">
+                        <label for="">Code</label>
+
+                          <input type="text" name="code_categ" [(ngModel)]="categorie.code_categ" placeholder="Enter le code du categorie" 
+                          class="form-control col-md-12" />
+                  </div>
+
+                 
+
+                  <button type="submit" class="btn btn-warning ">Ajouter la categorie a la liste</button>
+                  <button *ngIf="categorie.id" (click)="deleteCategorie(categorie.id)" class="btn btn-danger"  >Supprimer</button>
+                 <p> <button class="btn btn-primary mt-3 "  routerLink="/categories" style="width: 100%;">Liste de tous les categories</button></p>
+                  
+
+          </form>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<h1 class="text-warning">Facture</h1>
+<form action="">
+  <input type="hidden" name="OrderID"  [(ngModel)]="order.OrderID" 
+  />
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label >Numero facture</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">#</div>
+
+        </div>
+        <input name="OrderNo" [(ngModel)]="order.OrderNo"  readonly>
+      </div>
+    </div>
+    <div class="form-group">
+      <label >Client</label>
+      <select name="CustomerName" [(ngModel)]="order.CustomerName" >
+        <option value="0">-Select-</option>
+        <option value="Serigne Diop">Serigne Diop</option>
+        <option value="Serigne Modou Lo">Serigne Modou Lo
+        </option>
+
+      </select>
+    </div>
+</div>
+<div class="col-md-6">
+  <div class="form-group">
+    <label >Status</label>
+    <select name="OrderStatus" [(ngModel)]="order.OrderStatus">
+      <option value="payé" class="text-success" selected>Payé</option>
+          <option value="impayé" class="text-danger">Impayé</option>
+        </select>
+          <div class="form-group">
+            <label >Total</label>
+            <div class="from-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">fcfa</div>
+              </div>
+              <input name="GTotal" [(ngModel)]="order.GTotal" readonly>
+            </div>
+          </div>
+         </div>
+</div>
+<table class="table table-borderless">
+  <thead class="thead-light">
+    <th>Article</th>
+    <th>Prix</th>
+    <th>Quantité</th>
+    <th>Total</th>
+    <th>
+
+      <a  class="btn btn-sm btn-success text-white"> <i class="fa fa-plus "></i> Ajouter un article</a>
+    </th>
+  </thead>
+  <tbody>
+    <tr></tr>
+  </tbody>
+</table>
+</div>
+</form>

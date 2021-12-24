@@ -1,0 +1,30 @@
+
+
+<div *ngIf="article">
+  <h2>Detail de l'article N°<span class="badge badge-pill badge-success">{{article.id}}</span></h2> 
+  <div>
+
+    <label><b><u> Nom </u>:  </b></label><b> {{article.nom_art}}</b>
+  </div>
+  <div>
+    <label class=""><b><u> Prix d'achat</u>:  </b></label><span  class="  badge badge-pill badge-info font-weight-bold prix" > {{article.pa_art | currency: 'XOF'}}</span>
+  </div>
+  <div>
+    <label class=""><b><u> Prix de vente </u>:  </b></label><span  class="  badge badge-pill badge-warning font-weight-bold prix" > {{article.pv_art | currency: 'XOF'}}</span>
+  </div>
+  <div >
+    <label class=""><b><u>quantité</u>:  </b></label>
+    <span     class=' badge badge-pill badge-dark font-weight-bold prix'> {{article.qt_art }}
+ </span>
+ 
+  </div>
+   <!--
+  <div>
+    <label><b><u>Description </u> :  </b></label> {{article.desc_art}}
+  </div>  
+ <div>
+    <label><b><u>Numero Categorie</u> :  </b></label><span  class="  badge badge-pill badge-success font-weight-bold prix" >  {{article.categorie_id}}</span>
+  </div>  -->
+</div>
+<br>
+<button (click)="list()" class="btn btn-primary">Liste Des Articles</button><br>

@@ -1,0 +1,47 @@
+
+<div class="container ml-3">
+        <div class="row text-warning">
+                <h1>Article</h1>
+        </div>
+  <div class="row">
+          <form (ngSubmit)="saveArticle()">
+                <label for="">Nom</label>
+
+                  <div class="form-group row">
+                          <input type="text" name="nom_art" [(ngModel)]="article.nom_art"
+                          placeholder="Entrez le nom " class="form-control col-md-12 "/>
+                  </div>
+                  <div class="form-group row">
+                        <label for="">Categorie</label>
+                   <select name="categorie_id" [(ngModel)]="article.categorie_id"   class="form-control" >
+                       
+
+  <option value="0" selected>Select-</option>
+  <option *ngFor="let item of categories" value="{{item.id}}">{{item.nom_categ}}</option>
+  </select>
+                  </div>
+             
+                  <div class="form-group row">
+                        <label for="">Prix d'achat</label>
+                    <input type="text" name="pa_art" required [(ngModel)]="article.pa_art" placeholder="Enter le prix d'achat" 
+                    class="form-control col-md-12" />
+            </div>
+            <div class="form-group row">
+                <label for="">Prix de vente</label>
+              <input type="text" name="pv_art" required [(ngModel)]="article.pv_art" placeholder="Enter le prix de vente" 
+              class="form-control col-md-12" />
+      </div>
+            <div class="form-group row">
+                <label for="">Quantitè</label>
+              <input type="text" name="qt_art" required [(ngModel)]="article.qt_art" placeholder="Enter la quantité" 
+              class="form-control col-md-12" />
+      </div>
+
+                  
+                  <button type="submit" class="btn btn-warning row " style="width: 110%;">Ajouter l'article   </button>
+                  <button *ngIf="article.id" (click)="deleteArticle(article.id)" class="btn btn-danger mt-2 " style="width: 110%;"   >Supprimer</button>
+                 <p> <button class="btn btn-primary mt-2 row"  routerLink="/articles" style="width: 110%;">Annuler l'ajout</button></p>
+
+          </form>
+  </div>
+</div>

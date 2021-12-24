@@ -1,0 +1,17 @@
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+
+
+}
+
+a {
+  color: black;
+}
+
+ .categ {
+  font-size: .9rem;
+}
+.categ a {
+  color:white;
+}

@@ -1,0 +1,41 @@
+
+<div class="container ">
+        <div class="row text-warning">
+        <h1>Conteneur</h1>
+</div>
+  <div class="row ml-1">
+          <form (ngSubmit)="saveConteneur()">
+
+                  <div class="form-group row">
+                        <label for="">Reference</label>
+                          <input type="text" name="ref_cont" [(ngModel)]="conteneur.ref_cont"
+                          placeholder="Entrez la reference du conteneur" class="form-control col-md-12 "/>
+                  </div>
+
+                  <div class="form-group row">
+                        <label for="">Prix d'achat</label>
+                          <input type="text" name="pa_cont" [(ngModel)]="conteneur.pa_cont" placeholder="Enter le prix d'achat du conteneur" 
+                          class="form-control col-md-12" />
+                  </div>
+                  <div class="form-group row">
+                        <label for="">depot</label>
+                        <select name="depot_cont" [(ngModel)]="conteneur.depot_cont"   class="form-control" >
+             
+       <option value="0" selected>Select-</option>
+       <option *ngFor="let item of depots" value="{{item.i}}">{{item.nom_categ}}</option>
+       </select>
+                       </div>
+                  <div class="form-group row">
+                          <label for="">frais</label>
+                    <input type="text" name="frais_cont" [(ngModel)]="conteneur.frais_cont" placeholder="Entrez les frias du contemneur" 
+                    class="form-control col-md-12" />
+            </div>
+
+                  <button type="submit" class="btn btn-warning row"  style="width: 110%;">Ajouter le conteneur a la liste</button>
+                  <button *ngIf="conteneur.id" (click)="deleteConteneur(conteneur.id)" class="btn btn-danger row"  style="width: 110%;">  >Supprimer</button>
+                 <p> <button class="btn btn-primary mt-3 row"  routerLink="/conteneurs" style="width: 110%;">Liste de tous les conteneurs</button></p>
+                  
+
+          </form>
+  </div>
+</div>

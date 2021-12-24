@@ -1,0 +1,12 @@
+<div *ngIf="categorie">
+  <h2>Detail du Categorie N°<span class="badge badge-pill badge-success">{{categorie.id}}</span></h2> 
+  <div>
+    <label><b><u>Nom du Categorie </u> :   </b></label> <b > {{categorie.nom_categ}}</b>
+  </div>
+  <div>
+    <label class=""><b><u>Code Categorie</u>  :   </b></label><span  class="  badge badge-pill badge-info font-weight-bold " >  {{categorie.code_categ }}</span>
+  </div>
+ 
+</div>
+<br>
+<button (click)="list()" class="btn btn-primary">Liste  Des Categories</button><br>
